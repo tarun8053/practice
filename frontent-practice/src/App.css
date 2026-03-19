@@ -1,7 +1,13 @@
 .main{
+  height: 100px;
+  width: 200px;
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #cbafaf;
+  margin: 5px;
 }
 .flex{
   display: flex;
