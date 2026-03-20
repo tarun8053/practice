@@ -113,13 +113,26 @@ const stringComparision = (str) => {
     }
     return result
 }
+
+const reverseWords = (str) => {
+    return str.trim().split(' ').reverse().join(' ');
+}
+
+const stringIsRotation = (s1, s2) => {
+    if (s1.length !== s2.length) return false;
+
+    return (s1 + s1).includes(s2);
+}
+console.log(stringIsRotation("waterbottle", "erbottlewat"));
+
 // 3. Group Anagrams
 // 4. Minimum Window Substring (HARD 🔥)
 // 5. Valid Parentheses
-// 6. Check if string is rotation of another
 // 7. Longest Common Prefix
-// 8. Reverse Words in a String
 // 9. Implement strStr() (substring search)
 // 10. Character Replacement
 
-console.log(stringComparision("aaabbc"));
+ 
+
+
+//console.log("finish")
