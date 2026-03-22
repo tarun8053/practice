@@ -106,5 +106,89 @@ const anagramPalindromeCheck = (str) => {
 }
 
 // Longest Anagram Substring Between Two Strings
+// Input:  s = "aabaabaa", p = "aaba" 
+// Output: 4
 
-console.log(minStep('bab','aba'))
+const  longestAnagramSubstring = (str, p) => {
+    let map = {};
+
+    for(let item of p){
+        map[item] = (map[item] || 0) + 1;
+    }
+    let count = Object.keys(map).length;
+
+    let i = 0, j = 0, ans = 0;
+    while(j < str.length){
+        if(map[str[j]] !== undefined){
+            map[str[j]]--;
+            if(map[str[j]] === 0) count--;
+        }
+
+        if(j-i+1 === p.length){
+            if(count === 0){
+                return p.length
+            }
+            if(str[i] in map){
+                if(map[str[i]] === 0) count++
+                map[str[i]]++;
+                
+            }
+            i++;
+        }
+        j++;
+    }
+    return 0
+}
+
+const minimumWindowSubstring = (str, t) => {
+    let map = {};
+
+    for (let ch of t) {
+        map[ch] = (map[ch] || 0) + 1;
+    }
+
+    let count = Object.keys(map).length;
+    let i = 0, j = 0;
+    let start = 0;
+    let min = Infinity;
+
+    while (j < str.length) {
+
+        // expand window
+        if (str[j] in map) {
+            map[str[j]]--;
+            if (map[str[j]] === 0) count--;
+        }
+        j++;
+
+        // shrink window
+        while (count === 0) {
+            let len = j - i;
+
+            if (len < min) {
+                min = len;
+                start = i;
+            }
+
+            if (str[i] in map) {
+                if (map[str[i]] === 0) count++;
+                map[str[i]]++;
+            }
+            i++;
+        }
+    }
+
+    return min === Infinity ? "" : str.slice(start, start + min);
+};
+
+console.log(minimumWindowSubstring("ADOBECODEBANC", "ABC"));
+
+
+
+
+
+// Longest Substring with Exactly K Unique Characters
+// Count Distinct Elements in Every Window (size k)
+// Longest Palindromic Substring
+// Subarray Sum Equals K
+// Permutation in String
