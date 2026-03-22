@@ -1,11 +1,10 @@
 import React from 'react'
-import TODO from './Component/TODO'
-import Pagination from './Component/Pagination'
+import FormDataValidation from './Component/FormDataValidation'
 
 export default function App() {
   return (
     <div>
-     <Pagination/>
+     <FormDataValidation/>
     </div>
   )
 }
