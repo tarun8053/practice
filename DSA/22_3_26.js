@@ -187,8 +187,3 @@ console.log(minimumWindowSubstring("ADOBECODEBANC", "ABC"));
 
 
 
-// Longest Substring with Exactly K Unique Characters
-// Count Distinct Elements in Every Window (size k)
-// Longest Palindromic Substring
-// Subarray Sum Equals K
-// Permutation in String
