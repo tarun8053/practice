@@ -53,7 +53,7 @@ const subarraySumEqualsK = (nums, k) => {
             count += map.get(sum-k)
         }
 
-        map.set(sum,(map.get(sum) || 0) +1 );
+        map.set(sum,(map.get(sum) || 0) + 1 );
     }
     return count;
 }
@@ -84,7 +84,86 @@ const logestSubarraySumEqualsk = (nums, k) => {
     return len;
 };
 
+//  Longest Palindromic Substring *********** IMP ***********
+
+const  longestPalindromicSubstring = (str) => {
+
+    let ans = "";
+    for(let i = 0; i < str.length; i++){
+        let low = i;
+        let high = i;
+
+        while(str[low] === str[high]){
+            low--;
+            high++;
+            if(low === -1 || high === str.length) break;
+            
+        }
+
+        let PalindromicString = str.slice(low+1, high);
+
+        if(PalindromicString.length > ans.length){
+            ans = PalindromicString;
+        };
+
+        // for even length
+        low = i-1;
+        high = i;
+        while(str[low] === str[high]){
+            low--;
+            high++;
+            if(low === -1 || high === str.length) break;
+            
+        }
+
+        PalindromicString = str.slice(low+1, high);
+
+        if(PalindromicString.length > ans.length){
+            ans = PalindromicString;
+        };
+
+    }
+    return ans;
+}
+
+// all Zero Push into Last #  ===>>>> without extra space
+const allZeroPushintoLast = (arr) => {
+    let i = 0, j = arr.length-1;
+    while(i < j){
+        if(arr[i] === 0 && arr[j] !== 0){
+            [arr[i], arr[j]] = [arr[j], arr[i]]
+            i++;
+            j--;
+        }
+        if(arr[i] !== 0) i++;
+        if(arr[j] === 0) j--;
+    }
+    return arr;
+
+}
+
+// check string are rotaional of actual string =====>>>> example ABCD = CDAB true
+
+const rotaional = (str1, str2) => {
+    if(str1.length !== str2.length) return false;
+
+    const helper = str1.concat(str1);
+    if(helper.includes(str2)) return true;
+    return false;
+}
+
 // Find Pivot Index
+
+const pivotIndex = (arr) => {
+    let prefix = [];
+    prefix[0] = arr[0]
+    for(let i = 1; i < arr.length; i++){
+        prefix[i] = arr[i] + prefix[i-1];
+    }
+    return prefix;
+}
+
+console.log(pivotIndex([1,2,3,4]))
 
 
 

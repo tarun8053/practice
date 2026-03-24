@@ -69,6 +69,5 @@ const subarraySum = (nums, k) => {
 
 console.log(subarraySum([3,4,7,2,-3,1,4,2],7))
 
-// Longest Palindromic Substring
 // Subarray Sum Equals K
 // Permutation in String
