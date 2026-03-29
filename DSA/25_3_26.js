@@ -162,23 +162,3 @@ const maximumNumbervowelsinSubstringsizeK = (str, k) => {
     return max;
 };
 console.log(maximumNumbervowelsinSubstringsizeK("tryhard",4))
-// kal k lie 
-// Longest substring without repeating characters
-// Longest substring with at most K unique characters
-// Longest substring with exactly K unique characters
-// Minimum size subarray sum (sum ≥ target)
-// Longest subarray with sum ≤ K
-// Fruit into baskets (at most 2 types)
-// Maximum consecutive ones (flip at most K zeros)
-// Minimum window substring 🔥
-// Substring with concatenation of all words
-// Count number of nice subarrays (exactly K odd numbers)
-// Binary subarrays with sum
-// Longest repeating character replacement
-// Permutation in string (check inclusion)
-// Minimum window subsequence
-// Number of substrings containing all 3 characters
-// Longest subarray with equal 0s and 1s
-// Subarrays with K different integers
-// Maximum points you can obtain from cards
-// Longest substring with at most 2 distinct characters

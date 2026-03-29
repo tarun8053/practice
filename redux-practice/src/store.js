@@ -1,12 +1,8 @@
-import {configureStore} from '@reduxjs/toolkit'
-import  counterSlice from './Slices/CounterSlice';
-import apiReducer from './Slices/ApiSlice';
-import apiReducer2 from './Slices/Api2Slice';
+import { configureStore } from "@reduxjs/toolkit";
+import pcounter from './Slices/PcounterSlice'
 
 export const store = configureStore({
-    reducer : {
-       counter :counterSlice,
-       api: apiReducer,
-       api2:apiReducer2
+    reducer:{
+        counter:pcounter
     }
 });
